@@ -36,3 +36,5 @@ npm install
 npm run serve
 ```
 
+**Obs:** Veja os commits.
+
