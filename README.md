@@ -28,6 +28,14 @@ vue create app
 > Default ([Vue 3] babel, eslint)
 ```
 
+### Criando segundo projeto
+
+```
+vue create app-router
+cd app-router
+vue add router
+```
+
 ## Como rodar o projeto
 
 ```
