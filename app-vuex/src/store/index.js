@@ -12,6 +12,11 @@ export default createStore({
     cart: []
   },
   mutations: {
+    // Atualiza os dados
+    // Não esqueça do comando commit('nome da mutation')
+    storeUser(state, data) {
+      state.user = data
+    }
   },
   actions: {
   },
