@@ -5,7 +5,10 @@
             Adicionar
         </button>
 
-        <button @click="removeProduct()">
+        <button
+            v-if="inCart"
+            @click="removeProduct()"
+        >
             Remove
         </button>
     </div>
@@ -16,15 +19,21 @@ export default {
     props: {
         product: Object
     },
-
+    data() {
+        return {
+            inCart: false,
+        }
+    },
     methods: {
         addProduct() {
+            this.inCart = true
             this.$store.commit('addProduct', this.product)
         },
         removeProduct() {
+            this.inCart = false
             this.$store.commit('removeProduct', this.product.id)
         },
-    }
+    },
 }
 </script>
 
