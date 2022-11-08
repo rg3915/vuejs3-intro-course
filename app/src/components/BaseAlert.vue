@@ -1,6 +1,10 @@
 <template>
     <div :class="baseClass">
         <slot />
+
+        <button @click="onClick">
+            X
+        </button>
     </div>
 </template>
 
@@ -23,6 +27,10 @@ export default {
     },
 
     methods: {
+        onClick() {
+            this.$emit('close')
+            console.log('clicou')
+        }
     }
 }
 </script>
