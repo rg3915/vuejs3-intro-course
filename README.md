@@ -21,21 +21,6 @@ npm install -g @vue/cli
 vue --version
 ```
 
-### Criando o projeto
-
-```
-vue create app
-> Default ([Vue 3] babel, eslint)
-```
-
-### Criando segundo projeto
-
-```
-vue create app-router
-cd app-router
-vue add router
-```
-
 ## Como rodar o projeto
 
 ```
@@ -45,4 +30,29 @@ npm run serve
 ```
 
 **Obs:** Veja os commits.
+
+## Passo a passo
+
+### Criando o projeto
+
+```
+vue create app
+> Default ([Vue 3] babel, eslint)
+```
+
+### Criando projeto - vue-router
+
+```
+vue create app-router
+cd app-router
+vue add router
+```
+
+### Criando projeto - vuex
+
+```
+vue create app-vuex
+cd app-vuex
+vue add vuex
+```
 
