@@ -52,5 +52,28 @@ export default createStore({
     }
   },
   actions: {
+    // parece com as mutations
+    // no componente você usa dispatch
+    // storeUser(context, data) {
+    storeUser({ commit }, data) {
+      // console.log(context, data)
+      // console.log(context.getters.total)
+
+      // context.state.user = data
+      // Esta solução não é a ideal
+
+      // Aqui dá pra usar ASYNC! <<<
+
+      // Então
+
+      // ajax simulação
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          commit('storeUser', data);
+          resolve()
+        }, 1000)
+      })
+
+    }
   },
 })
