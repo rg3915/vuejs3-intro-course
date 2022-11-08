@@ -8,7 +8,13 @@ Curso introdutório de VueJS 3 do [Tiago Matos](https://github.com/tiagomatosweb
     <img src="./img/youtube.png">
 </a>
 
+
+## DOC
+
 https://vuejs.org/
+
+
+## Como rodar o projeto
 
 ```
 npm install
