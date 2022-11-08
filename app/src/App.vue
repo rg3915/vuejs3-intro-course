@@ -1,29 +1,22 @@
 <template>
     <div>
-        <TheHeader>
-            <template v-slot:description>
-                <p>dasds</p>
-            </template>
-
-            Content do header - menu ...
-        </TheHeader>
-        <BaseCard />
-        <BaseCard />
+        <BaseAlert
+            :variant="variant"
+        >
+            {{ text }}
+        </BaseAlert>
     </div>
 </template>
 
 <script>
-import BaseCard from '@/components/BaseCard';
-import TheHeader from '@/components/TheHeader';
-
+import BaseAlert from '@/components/BaseAlert';
 export default {
     name: 'App',
-    components: { 
-        TheHeader,
-        BaseCard
-    },
+    components: { BaseAlert },
     data() {
         return {
+            variant: 'success',
+            text: 'Seu formulário foi enviado'
         }
     },
     beforeUpdate() {},
