@@ -14,9 +14,25 @@ Curso introdutório de VueJS 3 do [Tiago Matos](https://github.com/tiagomatosweb
 https://vuejs.org/
 
 
+## Instalação
+
+```
+npm install -g @vue/cli
+vue --version
+```
+
+### Criando o projeto
+
+```
+vue create app
+> Default ([Vue 3] babel, eslint)
+```
+
 ## Como rodar o projeto
 
 ```
+cd app
 npm install
 npm run serve
 ```
+
