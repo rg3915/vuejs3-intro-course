@@ -7,14 +7,21 @@
 
             Content do header - menu ...
         </TheHeader>
+        <BaseCard />
+        <BaseCard />
     </div>
 </template>
 
 <script>
+import BaseCard from '@/components/BaseCard';
 import TheHeader from '@/components/TheHeader';
+
 export default {
     name: 'App',
-    components: { TheHeader },
+    components: { 
+        TheHeader,
+        BaseCard
+    },
     data() {
         return {
         }
