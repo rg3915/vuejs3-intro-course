@@ -103,3 +103,10 @@ touch api/db.json
 ```
 json-server --watch api/db.json
 ```
+
+### Axios e vuex
+
+```
+npm install axios
+vue add vuex
+```
