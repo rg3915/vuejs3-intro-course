@@ -63,3 +63,26 @@ vue create app-composition
 cd app-composition
 ```
 
+### Criando projeto - todo
+
+```
+vue create app-todo
+cd app-todo
+```
+
+### Instalando TailwindCSS
+
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+```
+mkdir -p src/assets/css
+
+cat << EOF > src/assets/css/main.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+EOF
+```
