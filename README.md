@@ -86,3 +86,20 @@ cat << EOF > src/assets/css/main.css
 @tailwind utilities;
 EOF
 ```
+
+Baixe o spinner.svg
+
+### json-server
+
+```
+npm install -g json-server
+```
+
+```
+mkdir api
+touch api/db.json
+```
+
+```
+json-server --watch api/db.json
+```
