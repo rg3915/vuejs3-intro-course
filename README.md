@@ -56,3 +56,10 @@ cd app-vuex
 vue add vuex
 ```
 
+### Criando projeto - composition
+
+```
+vue create app-composition
+cd app-composition
+```
+
