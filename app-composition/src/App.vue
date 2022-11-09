@@ -1,72 +1,56 @@
 <template>
-  {{ user.first_name }} {{ user.last_name }} <br>
-  {{ admin.first_name }} {{ admin.last_name }} <br>
-  Full name: {{ fullName }} <br>
+    <AppHook v-if="showAppHook" />
 
-  <button @click="admin.first_name = 'Super Admin'">Atualizar</button>
-  <br>
-  <img @click="changeName" alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="showAppHook = !showAppHook">
+        Toggle
+    </button>
+
+    <h5>User</h5>
+    {{ user.first_name }}
+    {{ user.last_name }}
+    <br><br>
+    <h6>Full name</h6>
+    {{ fullName }}
+
+    <button @click="user.first_name = 'Sansa'">Atualizar</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import { reactive, ref, computed, watch } from 'vue'
+import { ref, computed, watch } from 'vue';
+import AppHook from '@/components/AppHook';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  },
-  setup() {
-    // computed não funciona com reactive
-    const user = reactive({
-      first_name: 'Jon',
-      last_name: 'Snow'
-    })
+    name: 'App',
+    components: { AppHook },
+    setup() {
+        const user = ref({
+            first_name: 'Jon',
+            last_name: 'Snow'
+        })
 
-    const fullName = computed(() => {
-      return `${admin.value.first_name} ${admin.value.last_name}`
-    })
+        const showAppHook = ref(true)
 
-    const admin = ref({
-      first_name: 'Admin',
-      last_name: 'Master'
-    })
+        const fullName = computed(() => `${user.value.first_name} ${user.value.last_name}`)
 
-    watch(admin, () => {
-      console.log('Watch')
-    }, {
-      deep: true
-    })
+        watch(() => user.value.first_name, () => {
+            console.log('Logica cabulosa');
+        })
 
-    let name = 'Tiago'
-
-    const changeName = () => {
-      name = 'Jon Snow'
-      user.first_name = 'James'
-      // em ref não se esqueça do .value
-      admin.value.first_name = 'Alan'
-    }
-
-    return {
-      name,
-      admin,
-      user,
-      fullName,
-      changeName,
-    }
-  }
+        return {
+            user,
+            fullName,
+            showAppHook,
+        }
+    },
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    margin-top: 60px;
 }
 </style>
