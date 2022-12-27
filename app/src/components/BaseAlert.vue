@@ -5,6 +5,7 @@
         <button @click="onClick">
             X
         </button>
+        {{ email }}
     </div>
 </template>
 
@@ -15,6 +16,16 @@ export default {
             type: String,
             default: ''
         },
+    },
+    data() {
+        return {
+            email: ''
+        }
+    },
+
+    mounted() {
+        console.log('oi')
+        this.email = 'teste@email.com'
     },
 
     computed: {

@@ -23,7 +23,7 @@ export default createStore({
       if (index >= 0) {
         state.todos.splice(index, 1)
       }
-    },
+    },  
   },
   actions: {
     getTodos({ commit }) {
